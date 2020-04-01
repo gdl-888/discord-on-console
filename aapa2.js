@@ -54,36 +54,6 @@ client.on('message', (msg) => {
 	});
 });
 
-/*
-readline.emitKeypressEvents(process.stdin);
-process.stdin.setRawMode(true);
-
-process.stdin.on('keypress', (str, key) => {
-	if(key.ctrl) {
-		switch(key.name) {
-      /* 
-        -*- Ctrl+알파벳으로 채널을 이동한다. -*-
-        코드를 추가한다.
-        
-        알파벳 글쇠가 x이면 다음 코드를 추가한다.
-        
-        case 'x':
-            cid = '채널 ID(개발자모드 실행 후 ID 복사하기로 얻을 수 있음';
-            break;
-            
-        아래는 예시
-      */
-    
-			case 'o':
-				cid = '111222333444555666';
-			break; case 's':
-				cid = '666555444333222111';
-			break; case 'n':
-				cid = '999888777666555444';
-		}
-	}
-});
-*/
 
 try {
 	client.login("여기에 토큰 입력");
@@ -103,16 +73,28 @@ keypress(process.stdin);
 process.stdin.on('keypress', function (ch, key) {
 	if(key && key.ctrl) {
 		switch(key.name) {
-			case 't':
-				cid = '669855794220630030';
-			break; case 'a':
-				cid = '670426525182459927';
-			break; case 'e':
-				cid = '675264839094108161';
+      /* 
+        -*- Ctrl+알파벳으로 채널을 이동한다. -*-
+        코드를 추가한다.
+        
+        알파벳 글쇠가 x이면 다음 코드를 추가한다.
+        
+        case 'x':
+            cid = '채널 ID(개발자모드 실행 후 ID 복사하기로 얻을 수 있음';
+            break;
+            
+        아래는 예시
+      */
+			
+	
+    
+			case 'o':
+				cid = '111222333444555666';
 			break; case 's':
-				cid = '683288598497198097';
-			break; case 'g':
-				cid = '673490579765854225';
+				cid = '666555444333222111';
+			break; case 'n':
+				cid = '999888777666555444';
+		
 		}
 		try {
 			print("\n\n[[채널이 " + client.channels.get(sch).name + "에서 " + client.channels.get(cid).name + "(으)로 변경되었습니다]]");
