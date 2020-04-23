@@ -115,6 +115,19 @@ client.on('message', (msg) => {
 					}, 650);
 				}, 650);
 			}
+			
+			
+			if(msg.content.match(/[h][t][t][p][s][:][/][/]discord[.]gg[/][A-Za-z0-9]{4,9}/)) {
+				var ivlnk = msg.content.match(/[h][t][t][p][s][:][/][/]discord[.]gg[/][A-Za-z0-9]{4,9}/)[0];
+				
+				// print(ivlnk);
+				
+				client.fetchInvite(ivlnk).then((invite) => {
+					print("\n[[서버에 초대받았어요]]");
+					print("[[이름: " + invite.guild['name'] + "]]");
+					print("[[사용자 수: " + invite.guild['memberCount'] + "]]");
+				});
+			}
 		}
 	}
 	
